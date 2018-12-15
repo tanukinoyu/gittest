@@ -1,0 +1,96 @@
+fun main(args: Array<String> ){
+     
+     val y = You2("kazu")
+     println("your HP:${y.hp}/atk:${y.atk}")
+     
+     var e = Enemy2("dragon")
+     
+     println("enemy's HP:${e.hp}/atk:${e.atk}")
+     
+     for(i in 1..10){
+         println("turn ${i} start!")
+         
+         y.hp -= e.atk
+         e.hp -= y.atk
+         if(y.hp<=0 || e.hp<=0) break
+     }
+     
+     y.eat("potion" , 50)
+     
+     e = Enemy2("beast")
+     
+     for(i in 1..10){
+         println("turn ${i} start!")
+         
+         y.hp -= e.atk
+         e.hp -= y.atk
+         if(y.hp<=0 || e.hp<=0) break
+     }
+ }
+ interface Eatitem{
+     fun eat(item: String,gethp: Int)
+ }
+
+ open class You(var name: String){
+     init{
+         println("my name is ${name} !")
+     }
+     var hp: Int = 200
+     get(){
+         return field
+     }
+     set(value){
+         if(0<value) {
+                    println("your HP is last ${value}")
+         }
+         else if(value<=0) {
+                    println("you dle!")
+                    println("\n ----- THE END ----- \n")
+         }
+                    field = value
+     }
+     var atk: Int = 50
+     get(){
+         return field
+     }
+     set(value){
+         field = value
+     }
+     
+ }
+ class You2(name: String) : You(name), Eatitem{
+     override fun eat(item: String,gethp: Int){
+         hp += gethp
+         println("you have ate ${item} ! recovery ${gethp} HP !")
+     }
+ }
+ abstract class Enemy(val name: String){
+     init{
+     println("a ${name} appears !")
+     }
+     
+ }
+ class Enemy2(name: String) : Enemy(name){
+     var hp: Int = 200
+     get(){
+         return field
+     }
+     set(value){
+         if(0<value) {
+                    println("enemy's HP is last ${value}")
+         }
+         else if(value<=0) {
+                    println("enemy was defeated!")
+                    println("you got ${getmoney(atk)}money !")
+                    println("you got potion !")
+                    println("\n ----- BATTLE END ----- \n")
+         }
+         field = value
+     }
+     var atk: Int = 40
+     
+ }
+ fun getmoney(value : Int) = value * 4
+
+ 
+ 
