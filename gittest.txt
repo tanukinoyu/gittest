@@ -1,3 +1,5 @@
+// 30Í‚Ü‚Å@ƒNƒ‰ƒX—ûK
+
 fun main(args: Array<String> ){
      
      val y = You2("kazu")
