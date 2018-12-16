@@ -1,5 +1,7 @@
 // Chapter30
 
+// merge test
+
 fun main(args: Array<String> ){
      
      val y = You2("kazu")
