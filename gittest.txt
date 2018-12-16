@@ -1,6 +1,6 @@
 // Chapter30
 
-// merge test
+// branch test
 
 fun main(args: Array<String> ){
      
