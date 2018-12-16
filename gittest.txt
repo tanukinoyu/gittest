@@ -1,4 +1,4 @@
-// 30Í‚Ü‚Å@ƒNƒ‰ƒX—ûK
+// Chapter30
 
 fun main(args: Array<String> ){
      
