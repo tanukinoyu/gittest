@@ -1,8 +1,8 @@
 // Chapter30
 
-// branch test
-
 // merge test 02
+
+// conflict test
 
 fun main(args: Array<String> ){
      
